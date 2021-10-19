@@ -14,5 +14,5 @@
     "schema": {
         "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
     },
-    "image": "repo/dockerfile"
+    "image": "https://hub.docker.com/r/matsfunk/oocsi-server/{arch}"
 }
