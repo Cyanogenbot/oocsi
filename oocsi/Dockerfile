@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
-CMD ["bash"]
 RUN apt-get update && \
+    apt-get install -y software-properties-common && \
     apt-get install -y openjdk-11-jdk && \
     apt-get clean;
 COPY requirements.txt ./
@@ -13,4 +13,5 @@ COPY --chown=daemon:root opt /opt
 EXPOSE 9000 4444
 USER daemon
 ENTRYPOINT ["/opt/docker/bin/oocsi-web"]
+CMD []
 
