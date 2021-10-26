@@ -1,12 +1,4 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
-RUN RUN apt-get update && \
- apt-get -y upgrade && \
- mkdir -p /usr/share/man/man1 && \
- apt-get -y install openjdk-12-jre-headless
-
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+FROM openjdk:11.0.11-jre-slim as mainstage
 LABEL MAINTAINER="m.funk@tue.nl"
 WORKDIR /opt/docker
 COPY --chown=daemon:root 1/opt /opt
