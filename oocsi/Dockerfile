@@ -1,8 +1,10 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
-RUN apt-get update && \
-apt-get install -y --no-install-recommends \
-        openjdk-11-jre
+RUN RUN apt-get update && \
+ apt-get -y upgrade && \
+ mkdir -p /usr/share/man/man1 && \
+ apt-get -y install openjdk-12-jre-headless
+
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 LABEL MAINTAINER="m.funk@tue.nl"
