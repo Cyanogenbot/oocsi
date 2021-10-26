@@ -1,6 +1,6 @@
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-FROM openjdk:11.0.11-jre-slim as mainstage
+ARG BUILD_FROM
+FROM $BUILD_FROM
+CMD ["bash"]
 RUN apt-get update && \
     apt-get install -y openjdk-11-jdk && \
     apt-get clean;
@@ -13,4 +13,4 @@ COPY --chown=daemon:root opt /opt
 EXPOSE 9000 4444
 USER daemon
 ENTRYPOINT ["/opt/docker/bin/oocsi-web"]
-CMD []
+
