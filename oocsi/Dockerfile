@@ -1,9 +1,8 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 RUN apt-get update && \
-    apt-get install -y software-properties-common && \
-    apt-get install -y openjdk-11-jdk && \
-    apt-get clean;
+apt-get install -y --no-install-recommends \
+        openjdk-11-jre
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 LABEL MAINTAINER="m.funk@tue.nl"
