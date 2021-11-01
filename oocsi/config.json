@@ -14,10 +14,7 @@
         "9000/tcp": 9000,
         "4444/tcp": 4444
     },
-    "host_network": true,
-    "schema": {
-        "log_level": "list(trace|debug|info|notice|warning|error|fatal)?"
-    },
+
     "ingress": true,
     "ingress_port": 9000,
     "panel_title": "OOCSI for HomeAssistant",
