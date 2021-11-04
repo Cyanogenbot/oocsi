@@ -3,6 +3,7 @@ package nl.tue.id.oocsi.client;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import org.json.simple.JSONObject; 
 
 import nl.tue.id.oocsi.client.protocol.Handler;
 import nl.tue.id.oocsi.client.services.OOCSICall;
@@ -289,5 +290,9 @@ public class OOCSIClient {
 	 */
 	public void log(String message) {
 		// no logging by default
+	}
+	public boolean heyOOCSI(String devicename) {
+		CreateJSONobject devicename = new JSONObject()
+		devicename.put("")
 	}
 }
